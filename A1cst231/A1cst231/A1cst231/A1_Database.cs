@@ -76,5 +76,12 @@ namespace A1cst231
                 return database.Insert(item);
             }
         }
+
+        public int DeleteOpponent(Opponent item)
+        {
+            
+                return database.Delete(item);
+            
+        }
     }
 }

@@ -17,8 +17,12 @@ namespace A1cst231
 
             ListView Opponents = new ListView { ItemsSource = OppList, ItemTemplate = new DataTemplate(typeof(OpponentCell)) };
 
+
+            
+
             Content = new StackLayout
             {
+                
                 Children = {
                     Opponents
                 }
@@ -32,6 +36,7 @@ namespace A1cst231
 
             public OpponentCell()
             {
+                //BindableProperty id = new BindableProperty;
                 var lblFName = new Label { FontAttributes = FontAttributes.Bold };
                 lblFName.SetBinding(Label.TextProperty, "FirstName");
                 var lblLName = new Label { FontAttributes = FontAttributes.Bold };
@@ -43,6 +48,26 @@ namespace A1cst231
                 var lblEmail = new Label { FontAttributes = FontAttributes.Bold };
                 lblLName.SetBinding(Label.TextProperty, "Email");
 
+                
+
+                var delete = new MenuItem { IsDestructive=true, Text="Delete"};
+
+                delete.Clicked += (sender, e) =>
+                {
+                    A1_Database database = App.Database;
+                    Opponent = new Opponent
+                    {
+                        Address=lblAddr.ToString(),
+                        Email = lblEmail.ToString(),
+                        FirstName=lblFName.ToString(),
+                        
+
+                    }
+                    database.DeleteOpponent(e);
+                };
+
+                ContextActions.Add(delete);
+
                 View = new StackLayout
                 {
                     Orientation = StackOrientation.Horizontal,
@@ -53,6 +78,7 @@ namespace A1cst231
 
             }
 
+           
         }
     }
 }

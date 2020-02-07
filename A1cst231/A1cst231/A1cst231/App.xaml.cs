@@ -25,7 +25,15 @@ namespace A1cst231
         {
             InitializeComponent();
 
-            MainPage = new OpponentPage();
+
+            ToolbarItem tbGames = new ToolbarItem { Text = "Games", Order = ToolbarItemOrder.Primary };
+            ToolbarItem tbSett = new ToolbarItem { Text = "Settings", Order = ToolbarItemOrder.Primary };
+            
+
+            MainPage = new NavigationPage(new OpponentPage());
+            MainPage.ToolbarItems.Add(tbGames);
+            MainPage.ToolbarItems.Add(tbSett);
+            
         }
 
         protected override void OnStart()
