@@ -36,6 +36,9 @@ namespace A1cst231
 
             public OpponentCell()
             {
+
+                var id = new Label();
+                id.SetBinding(Label.TextProperty, "ID");
                 //BindableProperty id = new BindableProperty;
                 var lblFName = new Label { FontAttributes = FontAttributes.Bold };
                 lblFName.SetBinding(Label.TextProperty, "FirstName");
@@ -55,15 +58,17 @@ namespace A1cst231
                 delete.Clicked += (sender, e) =>
                 {
                     A1_Database database = App.Database;
-                    Opponent = new Opponent
+                    Opponent opponent = new Opponent
                     {
-                        Address=lblAddr.ToString(),
+                        Address = lblAddr.ToString(),
                         Email = lblEmail.ToString(),
-                        FirstName=lblFName.ToString(),
+                        FirstName = lblFName.ToString(),
+                        ID = int.Parse(id.ToString()),
+                        LastName=lblLName.ToString(),
+                        Phone=lblPhone.ToString()
                         
-
-                    }
-                    database.DeleteOpponent(e);
+                    };
+                    database.DeleteOpponent(opponent);
                 };
 
                 ContextActions.Add(delete);

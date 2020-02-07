@@ -50,7 +50,6 @@ D:\virpc\COSC295\COSC295Assignment1\A1cst231\A1cst231\A1cst231.iOS\bin\iPhoneSim
 D:\virpc\COSC295\COSC295Assignment1\A1cst231\A1cst231\A1cst231.iOS\bin\iPhoneSimulator\Debug\zh-Hant\Xamarin.Forms.Platform.iOS.resources.dll
 D:\virpc\COSC295\COSC295Assignment1\A1cst231\A1cst231\A1cst231.iOS\bin\iPhoneSimulator\Debug\A1cst231.dll
 D:\virpc\COSC295\COSC295Assignment1\A1cst231\A1cst231\A1cst231.iOS\bin\iPhoneSimulator\Debug\A1cst231.pdb
-D:\virpc\COSC295\COSC295Assignment1\A1cst231\A1cst231\A1cst231.iOS\bin\iPhoneSimulator\Debug\A1cst231.dll.mdb
 D:\virpc\COSC295\COSC295Assignment1\A1cst231\A1cst231\A1cst231.iOS\obj\iPhoneSimulator\Debug\ibtool\_BundleResourceWithLogicalName.items
 D:\virpc\COSC295\COSC295Assignment1\A1cst231\A1cst231\A1cst231.iOS\obj\iPhoneSimulator\Debug\actool\_PartialAppManifest.items
 D:\virpc\COSC295\COSC295Assignment1\A1cst231\A1cst231\A1cst231.iOS\obj\iPhoneSimulator\Debug\actool\_BundleResourceWithLogicalName.items
@@ -94,9 +93,9 @@ D:\virpc\COSC295\COSC295Assignment1\A1cst231\A1cst231\A1cst231.iOS\obj\iPhoneSim
 D:\virpc\COSC295\COSC295Assignment1\A1cst231\A1cst231\A1cst231.iOS\obj\iPhoneSimulator\Debug\CopyFilesToMac\Xamarin.Forms.Platform.iOS.resources.dll.ReferenceCopyLocalPaths.stamp
 D:\virpc\COSC295\COSC295Assignment1\A1cst231\A1cst231\A1cst231.iOS\obj\iPhoneSimulator\Debug\CopyFilesToMac\A1cst231.dll.ReferenceCopyLocalPaths.stamp
 D:\virpc\COSC295\COSC295Assignment1\A1cst231\A1cst231\A1cst231.iOS\obj\iPhoneSimulator\Debug\CopyFilesToMac\A1cst231.pdb.ReferenceCopyLocalPaths.stamp
-D:\virpc\COSC295\COSC295Assignment1\A1cst231\A1cst231\A1cst231.iOS\obj\iPhoneSimulator\Debug\CopyFilesToMac\A1cst231.dll.mdb.ReferenceCopyLocalPaths.stamp
 D:\virpc\COSC295\COSC295Assignment1\A1cst231\A1cst231\A1cst231.iOS\obj\iPhoneSimulator\Debug\CopyFilesToMac\Xamarin.Essentials.dll.mdb.ReferenceCopyLocalPaths.stamp
 D:\virpc\COSC295\COSC295Assignment1\A1cst231\A1cst231\A1cst231.iOS\obj\iPhoneSimulator\Debug\CopyFilesToMac\Xamarin.Forms.Platform.iOS.dll.mdb.ReferenceCopyLocalPaths.stamp
+D:\virpc\COSC295\COSC295Assignment1\A1cst231\A1cst231\A1cst231.iOS\obj\iPhoneSimulator\Debug\CopyFilesToMac\A1cst231.dll.mdb.ReferenceCopyLocalPaths.stamp
 D:\virpc\COSC295\COSC295Assignment1\A1cst231\A1cst231\A1cst231.iOS\obj\iPhoneSimulator\Debug\CopyFilesToMac\A1cst231.iOS.exe.mdb.ReferenceCopyLocalPaths.stamp
 D:\virpc\COSC295\COSC295Assignment1\A1cst231\A1cst231\A1cst231.iOS\obj\iPhoneSimulator\Debug\CopyFilesToMac\A1cst231.iOS.pdb.DebugSymbolsProjectOutputGroupOutput.stamp
 D:\virpc\COSC295\COSC295Assignment1\A1cst231\A1cst231\A1cst231.iOS\obj\iPhoneSimulator\Debug\CopyFilesToMac\Entitlements.plist.NoneOutput.stamp
