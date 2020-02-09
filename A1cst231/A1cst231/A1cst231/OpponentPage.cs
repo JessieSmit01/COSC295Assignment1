@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 
@@ -9,15 +10,18 @@ namespace A1cst231
 {
     public class OpponentPage : ContentPage
     {
-        
+        private static A1_Database database = App.Database;
+
+        public static ObservableCollection<Opponent> list = new ObservableCollection<Opponent>(database.GetOpponents());
+
+
+
         public OpponentPage()
         {
-            A1_Database database = App.Database;
-            List<Opponent> OppList = database.GetOpponents();
 
-            ListView Opponents = new ListView { ItemsSource = OppList, ItemTemplate = new DataTemplate(typeof(OpponentCell)) };
+            ListView Opponents = new ListView { ItemsSource = list, ItemTemplate = new DataTemplate(typeof(OpponentCell))};
 
-
+            
             
 
             Content = new StackLayout
@@ -27,6 +31,8 @@ namespace A1cst231
                     Opponents
                 }
             };
+
+           
         }
 
         public class OpponentCell : ViewCell
@@ -57,18 +63,11 @@ namespace A1cst231
 
                 delete.Clicked += (sender, e) =>
                 {
-                    A1_Database database = App.Database;
-                    Opponent opponent = new Opponent
-                    {
-                        Address = lblAddr.ToString(),
-                        Email = lblEmail.ToString(),
-                        FirstName = lblFName.ToString(),
-                        ID = int.Parse(id.ToString()),
-                        LastName=lblLName.ToString(),
-                        Phone=lblPhone.ToString()
-                        
-                    };
-                    database.DeleteOpponent(opponent);
+                   
+                    list.Remove((Opponent)this.BindingContext);
+                    database.DeleteOpponent(database.GetOpponent(((Opponent)this.BindingContext).ID));
+                    
+                    
                 };
 
                 ContextActions.Add(delete);
@@ -78,7 +77,7 @@ namespace A1cst231
                     Orientation = StackOrientation.Horizontal,
                     Spacing = 5,
                     Padding = 5,
-                    Children = { lblFName, lblLName, lblAddr, lblEmail, lblPhone }
+                    Children = {id, lblFName, lblLName, lblAddr, lblEmail, lblPhone }
                 };
 
             }
