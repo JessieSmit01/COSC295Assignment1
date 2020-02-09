@@ -41,9 +41,9 @@ namespace A1cst231
         }
 
         //Match Get requests
-        public List<Match> GetMatches()
+        public List<Match> GetMatchesForOpponent(int i)
         {
-            return database.Table<Match>().ToList();
+            return database.Table<Match>().Where(e=>e.OpponentID == i).ToList();
         }
 
         public Match GetMatch(int id)

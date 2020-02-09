@@ -12,15 +12,23 @@ namespace A1cst231
     {
         private static A1_Database database = App.Database;
 
-        public static ObservableCollection<Opponent> list = new ObservableCollection<Opponent>(database.GetOpponents());
+       // public static ObservableCollection<Opponent> list = new ObservableCollection<Opponent>(database.GetOpponents());
+        public static ListView Opponents = new ListView {  ItemTemplate = new DataTemplate(typeof(OpponentCell)), RowHeight = OpponentCell.RowHeight };
 
 
 
         public OpponentPage()
         {
 
-            ListView Opponents = new ListView { ItemsSource = list, ItemTemplate = new DataTemplate(typeof(OpponentCell))};
+            Button btnAdd = new Button { Text = "Add New Opponent" };
+            btnAdd.Clicked += (sender, e) => {
+                Navigation.PushAsync(new AddOpponentPage());
+            };
 
+            Opponents.ItemTapped += (sender, e) =>
+            {
+                Navigation.PushAsync(new MatchPage(e.Item as Opponent));
+            };
             
             
 
@@ -28,23 +36,28 @@ namespace A1cst231
             {
                 
                 Children = {
-                    Opponents
+                    Opponents,
+                    btnAdd
                 }
             };
 
            
         }
 
+        protected override void OnAppearing()
+        {
+            Opponents.ItemsSource = database.GetOpponents();
+        }
+
         public class OpponentCell : ViewCell
         {
-            //class that will display one todo in a list view
-            public const int RowHeight = 100;
+            //class that will display one fruit in a list view
+            public const int RowHeight = 55;
 
             public OpponentCell()
             {
 
-                var id = new Label();
-                id.SetBinding(Label.TextProperty, "ID");
+                
                 //BindableProperty id = new BindableProperty;
                 var lblFName = new Label { FontAttributes = FontAttributes.Bold };
                 lblFName.SetBinding(Label.TextProperty, "FirstName");
@@ -63,11 +76,9 @@ namespace A1cst231
 
                 delete.Clicked += (sender, e) =>
                 {
-                   
-                    list.Remove((Opponent)this.BindingContext);
-                    database.DeleteOpponent(database.GetOpponent(((Opponent)this.BindingContext).ID));
-                    
-                    
+                    int id = ((Opponent)this.BindingContext).ID;
+                    database.DeleteOpponent(database.GetOpponent(id));
+                    Opponents.ItemsSource = database.GetOpponents();
                 };
 
                 ContextActions.Add(delete);
@@ -77,7 +88,7 @@ namespace A1cst231
                     Orientation = StackOrientation.Horizontal,
                     Spacing = 5,
                     Padding = 5,
-                    Children = {id, lblFName, lblLName, lblAddr, lblEmail, lblPhone }
+                    Children = { lblFName, lblLName, lblAddr, lblEmail, lblPhone }
                 };
 
             }

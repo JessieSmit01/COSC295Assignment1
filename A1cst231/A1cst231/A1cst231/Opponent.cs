@@ -5,6 +5,7 @@ using SQLite;
 
 namespace A1cst231
 {
+
     public class Opponent
     {
         [PrimaryKey, AutoIncrement] //tell SQLite that this will be the primary key and it will autoincrement
