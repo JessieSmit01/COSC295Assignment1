@@ -33,7 +33,9 @@ namespace A1cst231
                 }
             };
 
-            Button btnSave = new Button();
+            Button btnSave = new Button { Text = "Save" };
+
+           
 
             btnSave.Clicked += (sender, e) =>
             {

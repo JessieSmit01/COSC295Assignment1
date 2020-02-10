@@ -14,7 +14,7 @@ namespace A1cst231
 
         public DateTime Date { get; set; } //date of match
         public string Comments { get; set; } //comments of match
-        public int gameID { get; set; } //id of game associated with match
+        public int GameID { get; set; } //id of game associated with match
         public bool Win { get; set; } //true or false for win
     }
 }

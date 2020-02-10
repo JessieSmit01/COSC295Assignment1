@@ -24,14 +24,34 @@ namespace A1cst231
                 // configure a fuel purchase object, then save to the database
                 Opponent op1 = new Opponent { Address = "123", Email = "123@gmail.com", FirstName = "John", LastName = "Smith", Phone = "0000000000" }; //leaving ID out
                 SaveOpponent(op1);
+
             }
 
+            if (database.Table<Game>().Count() == 0)
+            {
+                AddMatches();
+
+            }
+            
         }
 
         //Game get requests
-        public List<Game> GetGames()
+        public List<String> GetGameNames()
         {
-            return database.Table<Game>().ToList();
+            List<string> names = new List<string>();
+            List<Game> games = database.Table<Game>().ToList();
+            foreach(Game g in games)
+            {
+                names.Add(g.GameName);
+
+            }
+            return names;
+        }
+
+        public Game GetGame(string name)
+        {
+            //Use LINQ and a lambda expression to find an item
+            return database.Table<Game>().Where(e => e.GameName == name).FirstOrDefault(); //"i" is each object in the collection, being evaliated against the passed in parameter ;
         }
 
         public Game GetGame(int id)
@@ -46,10 +66,26 @@ namespace A1cst231
             return database.Table<Match>().Where(e=>e.OpponentID == i).ToList();
         }
 
+        public void AddMatches()
+        {
+            Game chess = new Game { GameName = "Chess", Description = "Simple grid game", Rating = 9.5 };
+                Game checkers = new Game { GameName = "Checkers", Description = "Simpler grid game", Rating = 5 };
+                Game dominos = new Game { GameName = "Dominoes", Description = "Blocks game", Rating = 6.75 };
+                SaveGame(chess);
+                SaveGame(checkers);
+                SaveGame(dominos);
+        }
+
         public Match GetMatch(int id)
         {
             //Use LINQ and a lambda expression to find an item
             return database.Table<Match>().Where(e => e.ID == id).FirstOrDefault(); //"i" is each object in the collection, being evaliated against the passed in parameter ;
+        }
+
+        public string GetGameName(int id)
+        {
+            Game selected = database.Table<Game>().Where(e=>e.ID == id).First();
+            return selected.GameName;
         }
 
 
@@ -75,6 +111,23 @@ namespace A1cst231
             {
                 return database.Insert(item);
             }
+        }
+
+        public int SaveMatch(Match item)
+        {
+            if (item.ID != 0) //has already been saved once (has an ID)
+            {
+                return database.Update(item);
+            }
+            else
+            {
+                return database.Insert(item);
+            }
+        }
+
+        public int SaveGame(Game item)
+        {
+            return database.Insert(item);
         }
 
         public int DeleteOpponent(Opponent item)

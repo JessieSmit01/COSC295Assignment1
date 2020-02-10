@@ -11,3 +11,15 @@ D:\virpc\COSC295\COSC295Assignment1\A1cst231\A1cst231\A1cst231\obj\Debug\netstan
 D:\virpc\COSC295\COSC295Assignment1\A1cst231\A1cst231\A1cst231\obj\Debug\netstandard2.0\A1cst231.dll
 D:\virpc\COSC295\COSC295Assignment1\A1cst231\A1cst231\A1cst231\obj\Debug\netstandard2.0\ref\A1cst231.dll
 D:\virpc\COSC295\COSC295Assignment1\A1cst231\A1cst231\A1cst231\obj\Debug\netstandard2.0\A1cst231.pdb
+D:\Jessie\Projects\COSC295Assignment1\A1cst231\A1cst231\A1cst231\bin\Debug\netstandard2.0\A1cst231.deps.json
+D:\Jessie\Projects\COSC295Assignment1\A1cst231\A1cst231\A1cst231\bin\Debug\netstandard2.0\A1cst231.dll
+D:\Jessie\Projects\COSC295Assignment1\A1cst231\A1cst231\A1cst231\bin\Debug\netstandard2.0\ref\A1cst231.dll
+D:\Jessie\Projects\COSC295Assignment1\A1cst231\A1cst231\A1cst231\bin\Debug\netstandard2.0\A1cst231.pdb
+D:\Jessie\Projects\COSC295Assignment1\A1cst231\A1cst231\A1cst231\obj\Debug\netstandard2.0\App.xaml.g.cs
+D:\Jessie\Projects\COSC295Assignment1\A1cst231\A1cst231\A1cst231\obj\Debug\netstandard2.0\A1cst231.csproj.CoreCompileInputs.cache
+D:\Jessie\Projects\COSC295Assignment1\A1cst231\A1cst231\A1cst231\obj\Debug\netstandard2.0\A1cst231.AssemblyInfoInputs.cache
+D:\Jessie\Projects\COSC295Assignment1\A1cst231\A1cst231\A1cst231\obj\Debug\netstandard2.0\A1cst231.AssemblyInfo.cs
+D:\Jessie\Projects\COSC295Assignment1\A1cst231\A1cst231\A1cst231\obj\Debug\netstandard2.0\XamlC.stamp
+D:\Jessie\Projects\COSC295Assignment1\A1cst231\A1cst231\A1cst231\obj\Debug\netstandard2.0\A1cst231.dll
+D:\Jessie\Projects\COSC295Assignment1\A1cst231\A1cst231\A1cst231\obj\Debug\netstandard2.0\ref\A1cst231.dll
+D:\Jessie\Projects\COSC295Assignment1\A1cst231\A1cst231\A1cst231\obj\Debug\netstandard2.0\A1cst231.pdb
