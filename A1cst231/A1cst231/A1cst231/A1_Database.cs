@@ -29,7 +29,7 @@ namespace A1cst231
 
             if (database.Table<Game>().Count() == 0)
             {
-                AddMatches();
+                AddGames();
 
             }
             
@@ -54,10 +54,22 @@ namespace A1cst231
             return database.Table<Game>().Where(e => e.GameName == name).FirstOrDefault(); //"i" is each object in the collection, being evaliated against the passed in parameter ;
         }
 
+        public List<Game> GetGames()
+        {
+            //Use LINQ and a lambda expression to find an item
+            return database.Table<Game>().ToList(); //"i" is each object in the collection, being evaliated against the passed in parameter ;
+        }
+
         public Game GetGame(int id)
         {
             //Use LINQ and a lambda expression to find an item
             return database.Table<Game>().Where(e => e.ID == id).FirstOrDefault(); //"i" is each object in the collection, being evaliated against the passed in parameter ;
+        }
+
+        public int GetGameCount(int id)
+        {
+            //Use LINQ and a lambda expression to find an item
+            return database.Table<Match>().Where(e => e.GameID == id).Count(); //"i" is each object in the collection, being evaliated against the passed in parameter ;
         }
 
         //Match Get requests
@@ -66,7 +78,7 @@ namespace A1cst231
             return database.Table<Match>().Where(e=>e.OpponentID == i).ToList();
         }
 
-        public void AddMatches()
+        public void AddGames()
         {
             Game chess = new Game { GameName = "Chess", Description = "Simple grid game", Rating = 9.5 };
                 Game checkers = new Game { GameName = "Checkers", Description = "Simpler grid game", Rating = 5 };

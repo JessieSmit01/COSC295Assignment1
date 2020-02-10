@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
+using System.Threading.Tasks;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 
 namespace A1cst231
@@ -16,7 +17,6 @@ namespace A1cst231
         public static int OpponentID = 0;
 
         public static string name = "";
-
        
 
         public MatchPage(Opponent opponent)
@@ -32,7 +32,11 @@ namespace A1cst231
             Match SelectedMatch = null;
 
             DatePicker matchDate = new DatePicker { Date = DateTime.Now };
-            Picker games = new Picker { ItemsSource = database.GetGameNames(), Title = "Game" };
+            Picker games = new Picker { ItemsSource = database.GetGameNames() };
+            
+            games.SelectedIndex = GetLastGame().Result;
+            
+       
 
             ViewCell date = new ViewCell { View = matchDate};
             EntryCell comment = new EntryCell { Label = "Comment:" };
@@ -66,11 +70,13 @@ namespace A1cst231
                 {
                     database.SaveMatch(new Match { Date = matchDate.Date, Win = win.On, Comments = comment.Text, GameID = games.SelectedIndex, OpponentID = OpponentID , ID = SelectedMatch.ID});
                     SelectedMatch = null;
+
+                    SecureStorage.SetAsync("Game", games.SelectedIndex.ToString());
                 }
                 else
                 {
                     database.SaveMatch(new Match { Date = matchDate.Date, Win = win.On, Comments = comment.Text, GameID = games.SelectedIndex, OpponentID = OpponentID });
-
+                    SecureStorage.SetAsync("Game", games.SelectedIndex.ToString());
                 }
 
                 Matches.ItemsSource = database.GetMatchesForOpponent(OpponentID);
@@ -86,6 +92,21 @@ namespace A1cst231
             };
         }
 
+        async Task<int> GetLastGame()
+        {
+            string result = await SecureStorage.GetAsync("Game");
+            //check if something was found
+            if (result != null)
+            {
+                return result.Equals('0') ? 0 : result.Equals('1') ? 1 : 2;
+            }
+            else
+            {
+
+                return 0;
+            }
+        }
+
         protected override void OnAppearing()
         {
             Matches.ItemsSource = database.GetMatchesForOpponent(OpponentID);
@@ -94,41 +115,46 @@ namespace A1cst231
         public class MatchCell : ViewCell
         {
             //class that will display one fruit in a list view
-            public const int RowHeight = 150;
+            public const int RowHeight = 100;
 
             public MatchCell()
             {
 
 
                 var lblOppName = new Label { FontAttributes = FontAttributes.Bold, Text=name };
-                
+                var lblGameID = new Label { FontAttributes = FontAttributes.Bold };
+                lblGameID.SetBinding(Label.TextProperty, "GameID");
                 var lblDate = new Label { FontAttributes = FontAttributes.Bold};
                 lblDate.SetBinding(Label.TextProperty, "Date");
                 var lblComments = new Label { FontAttributes = FontAttributes.Bold };
                 lblComments.SetBinding(Label.TextProperty, "Comments");
                 StackLayout row2 = new StackLayout { Orientation = StackOrientation.Horizontal,
-                    HorizontalOptions = LayoutOptions.CenterAndExpand,
+                    HorizontalOptions = LayoutOptions.StartAndExpand,
                     Children =
                     {
                         lblDate, lblComments
                     }
                 };
-
-
-                var lblGameType = new Label { Text = database.GetGameName(((Match)this.BindingContext).GameID)};
                 
-                var win = new Switch();
+                var win = new Switch ();
                 win.SetBinding(Switch.IsToggledProperty, "Win");
+                Label lblWin = new Label { Text = "Win?" };
 
+
+
+               
                 StackLayout row3 = new StackLayout
                 {
                     Orientation = StackOrientation.Horizontal,
-                    HorizontalOptions = LayoutOptions.CenterAndExpand,
+                    HorizontalOptions = LayoutOptions.StartAndExpand,
                     Children =
                     {
-                        lblGameType, win
+                       lblGameID, lblWin, win
                     }
                 };
+
+                
+
 
 
                 View = new StackLayout

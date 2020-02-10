@@ -28,12 +28,19 @@ namespace A1cst231
 
             ToolbarItem tbGames = new ToolbarItem { Text = "Games", Order = ToolbarItemOrder.Primary };
             ToolbarItem tbSett = new ToolbarItem { Text = "Settings", Order = ToolbarItemOrder.Primary };
+
+           
             
 
             MainPage = new NavigationPage(new OpponentPage());
             MainPage.ToolbarItems.Add(tbGames);
             MainPage.ToolbarItems.Add(tbSett);
-            
+
+            tbGames.Clicked += (sender, e) =>
+            {
+                MainPage.Navigation.PushAsync(new GamesPage());
+            };
+
         }
 
         protected override void OnStart()
