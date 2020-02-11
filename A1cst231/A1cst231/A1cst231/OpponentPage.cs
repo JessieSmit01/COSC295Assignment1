@@ -20,6 +20,18 @@ namespace A1cst231
         public OpponentPage()
         {
 
+            ToolbarItem tbGames = new ToolbarItem { Text = "Games", Order = ToolbarItemOrder.Primary };
+            ToolbarItem tbSett = new ToolbarItem { Text = "Settings", Order = ToolbarItemOrder.Primary };
+
+            this.ToolbarItems.Add(tbGames);
+            this.ToolbarItems.Add(tbSett);
+
+            tbGames.Clicked += (sender, e) =>
+            {
+                Navigation.PushAsync(new GamesPage());
+            };
+
+
             Button btnAdd = new Button { Text = "Add New Opponent" };
             btnAdd.Clicked += (sender, e) => {
                 Navigation.PushAsync(new AddOpponentPage());

@@ -23,3 +23,4 @@ D:\Jessie\Projects\COSC295Assignment1\A1cst231\A1cst231\A1cst231\obj\Debug\netst
 D:\Jessie\Projects\COSC295Assignment1\A1cst231\A1cst231\A1cst231\obj\Debug\netstandard2.0\A1cst231.dll
 D:\Jessie\Projects\COSC295Assignment1\A1cst231\A1cst231\A1cst231\obj\Debug\netstandard2.0\ref\A1cst231.dll
 D:\Jessie\Projects\COSC295Assignment1\A1cst231\A1cst231\A1cst231\obj\Debug\netstandard2.0\A1cst231.pdb
+D:\Jessie\Projects\COSC295Assignment1\A1cst231\A1cst231\A1cst231\obj\Debug\netstandard2.0\A1cst231.csprojAssemblyReference.cache

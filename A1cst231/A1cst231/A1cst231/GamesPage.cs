@@ -12,14 +12,13 @@ namespace A1cst231
         private static A1_Database database = App.Database;
 
         public static ListView Games = new ListView { ItemTemplate = new DataTemplate(typeof(GameCell)), RowHeight = GameCell.RowHeight };
-        public static int totalChess = 0;
-        public static int totalChecker = 0;
-        public static int totalDominos = 0;
+   
+
 
         public GamesPage()
         {
 
-            
+            Games.ItemsSource = database.GetGames();
 
             Content = new StackLayout
             {
@@ -33,16 +32,13 @@ namespace A1cst231
         {
             Games.ItemsSource = database.GetGames();
 
-            totalChess = database.GetGameCount(0);
-            totalChess = database.GetGameCount(1);
-            totalChess = database.GetGameCount(2);
         }
 
         public class GameCell : ViewCell
         {
             //class that will display one fruit in a list view
             public const int RowHeight = 100;
-
+            Label TotalMatches = new Label { Text = "# Matches:" };
             public GameCell()
             {
 
@@ -58,27 +54,36 @@ namespace A1cst231
 
                 StackLayout row2 = new StackLayout { Orientation = StackOrientation.Horizontal,Children = { lblDesc, lblRating}, HorizontalOptions = LayoutOptions.StartAndExpand };
 
-                Label TotalMatches = new Label { Text = "# Matches:" };
-                EntryCell totalMatches
-
+                
                 
 
-                //Label lblNum = new Label { FontAttributes = FontAttributes.Bold, Text = "# Matches:" };
+                
+                
 
 
-
-                View = new StackLayout
+            View = new StackLayout
                 {
                     Orientation = StackOrientation.Vertical,
                     Spacing = 5,
                     Padding = 5,
-                    Children = { lblName, row2}
+                    Children = { lblName, row2, TotalMatches}
                 };
+
+            }
+
+            protected override void OnBindingContextChanged()
+            {
+                base.OnBindingContextChanged();
+
+
+                TotalMatches.Text += database.GetGameCount(((Game)this.BindingContext).ID) ;
 
             }
 
 
         }
+
+        
 
 
     }

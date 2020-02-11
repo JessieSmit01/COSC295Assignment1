@@ -108,7 +108,7 @@
   },
   "libraries": {
     "Microsoft.NETCore.Platforms/1.1.0": {
-      "sha512": "kz0PEW2lhqygehI/d6XsPCQzD7ff7gUJaVGPVETX611eadGsA3A877GdSlU0LRVMCTH/+P3o2iDTak+S08V2+A==",
+      "sha512": "bLpT1f/SFlO1CzqXG12KnJzpZs6lv24uX2Rzi4Fmm0noJpNlnWRVryuO3yK18Ca04t/YHcO1e1Z0WDfjseqNzw==",
       "type": "package",
       "path": "microsoft.netcore.platforms/1.1.0",
       "files": [
@@ -251,7 +251,7 @@
       ]
     },
     "sqlite-net-pcl/1.6.292": {
-      "sha512": "TZPs206/ZZXhDAgCzxE5Dmw1enkRmtpd1RKt+dLJA6Kvml4RxwkasRs4js2kijtGxik1SLCs39rh9nl9YFwrYg==",
+      "sha512": "k4vT1gddjAh1UrlW2CyPahC3sZcazBEQLn3T/S4Pj8nAHp2DIj/jReIfCL1nPlWXj8RQIV0Hl8Uo5xMKAYF6DA==",
       "type": "package",
       "path": "sqlite-net-pcl/1.6.292",
       "files": [
@@ -267,7 +267,7 @@
       ]
     },
     "SQLitePCLRaw.bundle_green/1.1.13": {
-      "sha512": "E0Hm/XTfleE/LlrRZVucB1dQqDlIDPgqvkFymbGqMO7bSaoB6R2X5Cgzq/RDxBFSzHjpzet2Tp5Kar8faLSZ+Q==",
+      "sha512": "LHm53C/Imhtn9SMxQX2USt3ULkznQ47fRZg6o16hI4AIX/MIEuI8Zy40yJoDimZTBpkaxbDnScDjKz9M3ARqZQ==",
       "type": "package",
       "path": "sqlitepclraw.bundle_green/1.1.13",
       "files": [
@@ -314,7 +314,7 @@
       ]
     },
     "SQLitePCLRaw.core/1.1.13": {
-      "sha512": "I8Q9qL1urPegoyZ5uI32lgqsxl8aPRZAyVBJbO+0T/zlGz/LBc8vhRVyDyCOU9LWWpV8dYpT0nCpuLv1ua6zkA==",
+      "sha512": "UcP955bF6FtgzSu6S9jcC4FUzOqn5/E6dxby5CzzSxLYZHvGfDntfUzgwm/HD3nJgSpCi9VDNwU7TWVPICJdiQ==",
       "type": "package",
       "path": "sqlitepclraw.core/1.1.13",
       "files": [
@@ -340,7 +340,7 @@
       ]
     },
     "System.Numerics.Vectors/4.5.0": {
-      "sha512": "QQTlPTl06J/iiDbJCiepZ4H//BVraReU4O4EoRw1U02H5TLUIT7xn3GnDp9AXPSlJUDyFs4uWjWafNX6WrAojQ==",
+      "sha512": "nATsBTD2CKr4AYN6eRszhX4sptImWmBJwB/U6XKCWWfnCcrTBw8XSCm3QA9gjppkHTr8OkXUY21MR91D3QZXsw==",
       "type": "package",
       "path": "system.numerics.vectors/4.5.0",
       "files": [
@@ -387,7 +387,7 @@
       ]
     },
     "Xamarin.Essentials/1.1.0": {
-      "sha512": "W0XOt1dNMAE2POcsVotoKDDy5FdAOnR0qULKl6WI4kQEMxQ1sp84DsSU5iacV7oQUMuPhUBAm/3ywks0HO1QrQ==",
+      "sha512": "AGismQb55pszEQ/ZIv9O1U2YyaF2gHdBdAUO79+biHf1s7AL2R++DIvmf7Z+wtfhZrB9wxhXAkOUuYHgpY6oTw==",
       "type": "package",
       "path": "xamarin.essentials/1.1.0",
       "files": [
@@ -423,7 +423,6 @@
         "lib/uap10.0.16299/Xamarin.Essentials.pri",
         "lib/uap10.0.16299/Xamarin.Essentials.xml",
         "lib/xamarinios10/Xamarin.Essentials.dll",
-        "lib/xamarinios10/Xamarin.Essentials.dll.mdb",
         "lib/xamarinios10/Xamarin.Essentials.pdb",
         "lib/xamarinios10/Xamarin.Essentials.xml",
         "readme.txt",
@@ -432,7 +431,7 @@
       ]
     },
     "Xamarin.Forms/4.0.0.425677": {
-      "sha512": "drwO/MimaMUnmvkULASYjU5MRciVIJyiLxD3ihFq8P+DWynQZ2NLNej0Vrs3k2L7UdmqvcgCxEJdfT7uFl2KVg==",
+      "sha512": "4gyY6veCilKptd1xfK/6/yRYYmhOHoiz4x8poRoD0yoRgeRGLCxZeNqK9TgLyLYQ+h4a6Y3/6U0I5pJAp4GJ5g==",
       "type": "package",
       "path": "xamarin.forms/4.0.0.425677",
       "files": [
@@ -538,7 +537,6 @@
         "lib/Xamarin.iOS10/Xamarin.Forms.Core.xml",
         "lib/Xamarin.iOS10/Xamarin.Forms.Platform.dll",
         "lib/Xamarin.iOS10/Xamarin.Forms.Platform.iOS.dll",
-        "lib/Xamarin.iOS10/Xamarin.Forms.Platform.iOS.dll.mdb",
         "lib/Xamarin.iOS10/Xamarin.Forms.Platform.iOS.pdb",
         "lib/Xamarin.iOS10/Xamarin.Forms.Xaml.dll",
         "lib/Xamarin.iOS10/Xamarin.Forms.Xaml.pdb",
@@ -687,27 +685,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\cst231\\.nuget\\packages\\": {},
-    "C:\\Microsoft\\Xamarin\\NuGet\\": {},
+    "C:\\Users\\jessi\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\virpc\\COSC295\\COSC295Assignment1\\A1cst231\\A1cst231\\A1cst231\\A1cst231.csproj",
+      "projectUniqueName": "D:\\Jessie\\Projects\\COSC295Assignment1\\A1cst231\\A1cst231\\A1cst231\\A1cst231.csproj",
       "projectName": "A1cst231",
-      "projectPath": "D:\\virpc\\COSC295\\COSC295Assignment1\\A1cst231\\A1cst231\\A1cst231\\A1cst231.csproj",
-      "packagesPath": "C:\\Users\\cst231\\.nuget\\packages\\",
-      "outputPath": "D:\\virpc\\COSC295\\COSC295Assignment1\\A1cst231\\A1cst231\\A1cst231\\obj\\",
+      "projectPath": "D:\\Jessie\\Projects\\COSC295Assignment1\\A1cst231\\A1cst231\\A1cst231\\A1cst231.csproj",
+      "packagesPath": "C:\\Users\\jessi\\.nuget\\packages\\",
+      "outputPath": "D:\\Jessie\\Projects\\COSC295Assignment1\\A1cst231\\A1cst231\\A1cst231\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Microsoft\\Xamarin\\NuGet\\",
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\cst231\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        "C:\\Users\\jessi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netstandard2.0"
