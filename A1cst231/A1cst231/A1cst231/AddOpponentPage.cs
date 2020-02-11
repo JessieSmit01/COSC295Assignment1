@@ -39,7 +39,7 @@ namespace A1cst231
 
             btnSave.Clicked += (sender, e) =>
             {
-                database.SaveOpponent(new Opponent { Address = fName.Text ,Email = email.Text,FirstName=lName.Text,LastName=lName.Text, Phone=phone.Text});
+                database.SaveOpponent(new Opponent { Address = addr.Text ,Email = email.Text,FirstName=fName.Text,LastName=lName.Text, Phone=phone.Text});
                 Navigation.PopAsync();
             };
 

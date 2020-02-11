@@ -20,18 +20,7 @@ namespace A1cst231
         public OpponentPage()
         {
 
-            ToolbarItem tbGames = new ToolbarItem { Text = "Games", Order = ToolbarItemOrder.Primary };
-            ToolbarItem tbSett = new ToolbarItem { Text = "Settings", Order = ToolbarItemOrder.Primary };
-
-            this.ToolbarItems.Add(tbGames);
-            this.ToolbarItems.Add(tbSett);
-
-            tbGames.Clicked += (sender, e) =>
-            {
-                Navigation.PushAsync(new GamesPage());
-            };
-
-
+           
             Button btnAdd = new Button { Text = "Add New Opponent" };
             btnAdd.Clicked += (sender, e) => {
                 Navigation.PushAsync(new AddOpponentPage());
@@ -80,7 +69,7 @@ namespace A1cst231
                 var lblPhone = new Label { FontAttributes = FontAttributes.Bold };
                 lblPhone.SetBinding(Label.TextProperty, "Phone");
                 var lblEmail = new Label { FontAttributes = FontAttributes.Bold };
-                lblLName.SetBinding(Label.TextProperty, "Email");
+                lblEmail.SetBinding(Label.TextProperty, "Email");
 
                 
 
@@ -98,6 +87,7 @@ namespace A1cst231
                 View = new StackLayout
                 {
                     Orientation = StackOrientation.Horizontal,
+                    HorizontalOptions = LayoutOptions.CenterAndExpand,
                     Spacing = 5,
                     Padding = 5,
                     Children = { lblFName, lblLName, lblAddr, lblEmail, lblPhone }

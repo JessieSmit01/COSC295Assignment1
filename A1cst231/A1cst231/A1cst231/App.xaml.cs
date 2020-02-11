@@ -33,9 +33,23 @@ namespace A1cst231
             
 
             MainPage = new NavigationPage(new OpponentPage());
-            
+            ToolbarItem tbGames = new ToolbarItem { Text = "Games", Order = ToolbarItemOrder.Primary };
+            ToolbarItem tbSett = new ToolbarItem { Text = "Settings", Order = ToolbarItemOrder.Primary };
 
-            
+            MainPage.ToolbarItems.Add(tbGames);
+           MainPage.ToolbarItems.Add(tbSett);
+
+            tbGames.Clicked += (sender, e) =>
+            {
+                MainPage.Navigation.PushAsync(new GamesPage());
+            };
+
+            tbSett.Clicked += (sender, e) =>
+            {
+                MainPage.Navigation.PushAsync(new SettingPage());
+            };
+
+
 
         }
 

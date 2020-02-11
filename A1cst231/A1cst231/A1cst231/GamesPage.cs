@@ -75,8 +75,11 @@ namespace A1cst231
             {
                 base.OnBindingContextChanged();
 
+                if(this.BindingContext != null)
+                {
+                    TotalMatches.Text += database.GetGameCount(((Game)this.BindingContext).ID);
 
-                TotalMatches.Text += database.GetGameCount(((Game)this.BindingContext).ID) ;
+                }
 
             }
 

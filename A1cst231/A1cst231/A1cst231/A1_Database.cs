@@ -100,6 +100,12 @@ namespace A1cst231
             return selected.GameName;
         }
 
+        public string GetOpponentName(int id)
+        {
+            Opponent selected = database.Table<Opponent>().Where(e => e.ID == id).First();
+            return selected.FirstName + " " + selected.LastName;
+        }
+
 
         //Opponent Get requests
         public List<Opponent> GetOpponents()
@@ -147,6 +153,22 @@ namespace A1cst231
             
                 return database.Delete(item);
             
+        }
+
+        public void ResetTables()
+        {
+            //drop all tables
+            database.DropTable<Game>();
+            database.DropTable<Opponent>();
+            database.DropTable<Match>();
+
+            //recreate all tables
+            database.CreateTable<Game>(); //Create a table using the Game ORM object **IF one does not currently exist
+            database.CreateTable<Opponent>(); //Create a table using the Opponent ORM object **IF one does not currently exist
+            database.CreateTable<Match>(); //Create a table using the Match ORM object **IF one does not currently exist
+
+            //add the games into the game table with default values
+            AddGames();
         }
     }
 }

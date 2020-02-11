@@ -68,14 +68,14 @@ namespace A1cst231
             {
                 if(SelectedMatch != null)
                 {
-                    database.SaveMatch(new Match { Date = matchDate.Date, Win = win.On, Comments = comment.Text, GameID = games.SelectedIndex, OpponentID = OpponentID , ID = SelectedMatch.ID});
+                    database.SaveMatch(new Match { Date = matchDate.Date, Win = win.On, Comments = comment.Text, GameID = games.SelectedIndex + 1, OpponentID = OpponentID , ID = SelectedMatch.ID});
                     SelectedMatch = null;
 
                     SecureStorage.SetAsync("Game", games.SelectedIndex.ToString());
                 }
                 else
                 {
-                    database.SaveMatch(new Match { Date = matchDate.Date, Win = win.On, Comments = comment.Text, GameID = games.SelectedIndex, OpponentID = OpponentID });
+                    database.SaveMatch(new Match { Date = matchDate.Date, Win = win.On, Comments = comment.Text, GameID = games.SelectedIndex + 1, OpponentID = OpponentID });
                     SecureStorage.SetAsync("Game", games.SelectedIndex.ToString());
                 }
 
@@ -116,14 +116,14 @@ namespace A1cst231
         {
             //class that will display one fruit in a list view
             public const int RowHeight = 100;
+            Label lblGameID = new Label { FontAttributes = FontAttributes.Bold };
+            Label lblOppName = new Label { FontAttributes = FontAttributes.Bold };
 
             public MatchCell()
             {
 
 
-                var lblOppName = new Label { FontAttributes = FontAttributes.Bold, Text=name };
-                var lblGameID = new Label { FontAttributes = FontAttributes.Bold };
-                lblGameID.SetBinding(Label.TextProperty, "GameID");
+                
                 var lblDate = new Label { FontAttributes = FontAttributes.Bold};
                 lblDate.SetBinding(Label.TextProperty, "Date");
                 var lblComments = new Label { FontAttributes = FontAttributes.Bold };
@@ -164,6 +164,19 @@ namespace A1cst231
                     Padding = 5,
                     Children = { lblOppName, row2,row3}
                 };
+
+            }
+
+            protected override void OnBindingContextChanged()
+            {
+                base.OnBindingContextChanged();
+
+                if (this.BindingContext != null)
+                {
+                    lblGameID.Text = database.GetGameName(((Match)this.BindingContext).GameID);
+                    lblOppName.Text = database.GetOpponentName(((Match)this.BindingContext).OpponentID);
+
+                }
 
             }
 
