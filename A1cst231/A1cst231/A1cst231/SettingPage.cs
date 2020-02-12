@@ -12,12 +12,14 @@ namespace A1cst231
         private static A1_Database database = App.Database;
         public SettingPage()
         {
+            //create a button with text of reset
             Button btnReset = new Button { Text = "Reset", BackgroundColor = Color.Red };
+            //on clicked, reset the tables
             btnReset.Clicked += (sender, e) =>
             {
                 database.ResetTables();
 
-                Navigation.PopToRootAsync();
+                Navigation.PopToRootAsync(); //pop back to main page
             };
 
             Content = new StackLayout

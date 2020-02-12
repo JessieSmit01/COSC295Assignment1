@@ -8,6 +8,7 @@ namespace A1cst231
     {
         static A1_Database database;
 
+        //Create a database
         public static A1_Database Database
         {
             //give access to whole application to the database
@@ -25,25 +26,24 @@ namespace A1cst231
         {
             InitializeComponent();
 
-
-            //ToolbarItem tbGames = new ToolbarItem { Text = "Games", Order = ToolbarItemOrder.Primary };
-            //ToolbarItem tbSett = new ToolbarItem { Text = "Settings", Order = ToolbarItemOrder.Primary };
-
-           
             
-
+            //set the main page
             MainPage = new NavigationPage(new OpponentPage());
+            //create toolbar items
             ToolbarItem tbGames = new ToolbarItem { Text = "Games", Order = ToolbarItemOrder.Primary };
             ToolbarItem tbSett = new ToolbarItem { Text = "Settings", Order = ToolbarItemOrder.Primary };
 
+            //add toolbar items to main page
             MainPage.ToolbarItems.Add(tbGames);
-           MainPage.ToolbarItems.Add(tbSett);
+            MainPage.ToolbarItems.Add(tbSett);
 
+            //games option clicked, go to games page
             tbGames.Clicked += (sender, e) =>
             {
                 MainPage.Navigation.PushAsync(new GamesPage());
             };
 
+            //settings option clicked, go to settings page
             tbSett.Clicked += (sender, e) =>
             {
                 MainPage.Navigation.PushAsync(new SettingPage());

@@ -5,6 +5,7 @@ using SQLite;
 
 namespace A1cst231
 {
+    //this class will represent a match
     public class Match
     {
         [PrimaryKey, AutoIncrement] //tell SQLite that this will be the primary key and it will autoincrement
